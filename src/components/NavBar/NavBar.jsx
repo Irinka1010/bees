@@ -36,11 +36,11 @@ const NavBar = () => {
 							</NavDropdown>
 						</Nav>
 						<Nav.Link href="#home">Дом пчелы</Nav.Link>
-						<Nav.Link href="#features">Соты</Nav.Link>
-						<Nav.Link href="#pricing">Мед</Nav.Link>
-						<Nav.Link href="#pricing">Таблица данных</Nav.Link>
+						<Nav.Link href="#">Соты</Nav.Link>
+						<Nav.Link href="#">Мед</Nav.Link>
+						<Nav.Link href="#">Таблица данных</Nav.Link>
 					</Nav>
-					<NavLink href="#pricing">Регистрация</NavLink>
+					<NavLink href="#">Регистрация</NavLink>
 				</Collapse>
 			</Container>
 		</Navigation>
