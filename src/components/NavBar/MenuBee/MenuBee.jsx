@@ -14,13 +14,13 @@ const MenuBee = () => {
 						<li>
 							<ul>
 								Индийская пчела
-								<li>
+								<li className="item">
 									<LinkMenu> Красная</LinkMenu>
 								</li>
-								<li>
+								<li className="item">
 									<LinkMenu>Розовая</LinkMenu>
 								</li>
-								<li>
+								<li className="item">
 									<LinkMenu>Черная</LinkMenu>
 								</li>
 							</ul>
@@ -28,13 +28,13 @@ const MenuBee = () => {
 						<li>
 							<ul>
 								Арликовая пчела
-								<li>
+								<li className="item">
 									<LinkMenu> Красная</LinkMenu>
 								</li>
-								<li>
+								<li className="item">
 									<LinkMenu>Розовая</LinkMenu>
 								</li>
-								<li>
+								<li className="item">
 									<LinkMenu>Черная</LinkMenu>
 								</li>
 							</ul>

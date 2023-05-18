@@ -20,12 +20,15 @@ export const ListItem = styled.ul`
 		top: 20px;
 		left: 10px;
 	}
+	.item {
+		margin-bottom: 5px;
+	}
 `;
 export const LinkMenu = styled(Link)`
 	color: #665822;
 	font-weight: 400;
 	font-style: 14px;
-	padding: 5px;
+	padding: 2px;
 	&:hover {
 		background-color: rgb(244, 228, 228);
 	}
