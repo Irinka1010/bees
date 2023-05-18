@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# BEES
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Цей проєкт був створений за допомогою
+[Create React App](https://github.com/facebook/create-react-app)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **Мета**: створити форму для вибору бджілок і їхніх типів.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **Технічне завдання**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Верстка производится в соответствии со стандартами языка разметки HTML5 и CSS3. Поддерживаемые
+браузеры: • Microsoft Edge – все версии; • Google Chrome – версия 29 и выше; • Opera – версия 15 и
+выше; • Mozilla Firefox – версия 18 и выше; • Safari – версия 7.1 и выше. Общие базовые
+требования 1. Единообразное написание и форматирование кода в HTML, CSS и JavaScript. 2.
+Использование jQuery. 3. Для резиновых макетов обязательно должна быть задана минимальная и
+максимальная ширина. 4. Цвет фона для body задан всегда. Если конкретный цвет не указан в макете,
+используется белый (#fff). 5. Если Javascript кода много — нужно его выносить в отдельный файл.
+Обработчики событий тоже лучше отделить и объявлять в отдельном файле. 6. Недопустимы грубые ошибки
+в разметке (ссылки сделаны не тегом <a>, абзацы должны быть абзацами, а не <br><br>, формы должны
+быть только внутри тега <form>). 7. Не рекомендуется использование !important без крайней
+необходимости. 8. Нельзя использовать транслит в названиях классов, атрибутах и так далее. 9. Нельзя
+строить сетку с помощью таблиц и позиционирования. 10. Использовать normalize.css или reset.css. 11.
+Шрифты использовать Google Fonts Вёрстка проходит тест на переполнение контентом. Вёрстка не
+ломается: • При добавлении в элементы большего количества текста. • При использовании картинок с
+неподходящими размерами. • Текст не должен выпадать из объектов. • Переполнение контентными блоками
+не приводит к нарушению сетки. Кодировка файлов Все файлы кодируются в кодировке UTF-8 without BOM.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Запуск прєкта
 
-### `npm run build`
+1. Установи базові залежності командою **npm install**.
+2. Запусти режим розробки командою **npm start**.
+3. Перейди в браузер за адресою <http://localhost:3000/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Над проєктом працювали
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Михайлова Ірина
 
-### `npm run eject`
+[Linkedin](linkedin.com/in/iryna-mykhailova10)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[GitHab](https://github.com/Irinka1010)

@@ -16,17 +16,12 @@ function AirbnbThumbComponent(props) {
 	);
 }
 
-// AirbnbThumbComponent.propTypes = {
-// 	children: PropTypes.node,
-// };
+const Price = ({ setState, state }) => {
+	const [price, setPrice] = useState([0, 100]);
 
-const Price = () => {
-	const [value, setValue] = useState([0, 100]);
-
-	const handleChange = (event, newValue) => {
-		setValue(newValue);
-
-		console.log(value);
+	const handleChange = (event, newPrice) => {
+		setPrice(newPrice);
+		setState({ ...state, price });
 	};
 
 	return (
@@ -35,13 +30,13 @@ const Price = () => {
 				<p className="text">
 					oт
 					<Label>
-						{value[0]} <span className="label-spsn">$</span>
+						{price[0]} <span className="label-spsn">$</span>
 					</Label>
 				</p>
 				<p className="text">
 					до
 					<Label>
-						{value[1]} <span className="label-spsn">$</span>
+						{price[1]} <span className="label-spsn">$</span>
 					</Label>
 				</p>
 			</WrapperLabel>
@@ -51,9 +46,7 @@ const Price = () => {
 				slots={{ thumb: AirbnbThumbComponent }}
 				getAriaLabel={index => (index === 0 ? 'Minimum price' : 'Maximum price')}
 				defaultValue={[0, 100]}
-				// valueLabelDisplay="auto"
 				onChange={handleChange}
-				// getAriaValueText={minPrice}
 			/>
 		</>
 	);

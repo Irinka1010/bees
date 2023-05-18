@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { Forms, ListImage, Image, WrapperButton } from './ResultForm.styles';
-// import useForm from '../../helpers/hooks/useForm';
+import { Forms, ListImage, Image, WrapperButton } from './ResultForm.styled';
+import useForm from '../../helpers/hooks/useForm';
 import ReactStars from 'react-rating-stars-component';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
@@ -16,22 +16,22 @@ const speciesBees = [
 	{ title: 'Индийская пчела' },
 	{ title: 'Арликовая пчела' },
 ];
-// const initialState = {
-// 	typeBees: [],
-// 	abdomenBee: [],
-// 	image: '',
-// 	producer: [],
-// 	price: '',
-// };
-const ResultForm = ({ galiiery }) => {
-	// const { state, handleChange, handleSubmit, setState } = useForm({
-	// 	initialState,
-	// 	onSubmit,
-	// });
-	// const { typeBees, abdomenBee, image } = state;
-	// const ratingChanged = rating => {
-	// 	setState({ ...state, rating });
-	// };
+const initialState = {
+	price: '',
+	rating: '',
+};
+const ResultForm = ({ galiiery, onSubmit }) => {
+	const { state, handleSubmit, setState } = useForm({
+		initialState,
+		onSubmit,
+	});
+
+	const ratingChanged = rating => {
+		setState({ ...state, rating });
+	};
+	const reset = () => {
+		console.log('trtr');
+	};
 	const ratingSettings = {
 		size: 35,
 		isHalf: true,
@@ -40,11 +40,11 @@ const ResultForm = ({ galiiery }) => {
 	};
 	return (
 		<>
-			<Forms>
+			<Forms onSubmit={handleSubmit}>
 				<Row as="ul" md={2} sm={1}>
 					<Col as="li" className={'p-4'}>
 						<h2 className="subtitle">Цена</h2>
-						<Price />
+						<Price setState={setState} state={state} />
 					</Col>
 					<Col as="li" className={'p-4'}>
 						<h2 className="subtitle">Вид пчел</h2>
@@ -52,7 +52,7 @@ const ResultForm = ({ galiiery }) => {
 					</Col>
 					<Col as="li" className={'p-4'}>
 						<h2 className="subtitle">Рейтинг пчел</h2>
-						<ReactStars {...ratingSettings} />
+						<ReactStars {...ratingSettings} onChange={ratingChanged} />
 					</Col>
 					<Col as="li" className={'p-4'}>
 						<h2 className="subtitle">Выбрать производителя</h2>
@@ -85,7 +85,7 @@ const ResultForm = ({ galiiery }) => {
 					<Col as="li" className={'p-4'}>
 						<WrapperButton>
 							<Button text={'Записать'} type={'submit'} />
-							<Button text={'Сбросить'} type={'reset'} />
+							<Button text={'Сбросить'} type={'button'} onClick={reset} />
 						</WrapperButton>
 					</Col>
 				</Row>
