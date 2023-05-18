@@ -15,7 +15,7 @@ function App() {
 			};
 			return [...prev, newData];
 		});
-		console.log(data);
+		console.log(datas);
 	};
 	return (
 		<>
