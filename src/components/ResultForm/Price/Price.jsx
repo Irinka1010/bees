@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { SliderThumb } from '@mui/material/Slider';
-import { AirbnbSlider } from './AirbnbSlider.styles';
+import { AirbnbSlider } from './AirbnbSlider.styled';
 import { Label, WrapperLabel } from './Price.styled';
 
 function AirbnbThumbComponent(props) {

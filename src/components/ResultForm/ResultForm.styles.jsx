@@ -16,16 +16,10 @@ export const FormList = styled.ul`
 `;
 
 export const LabelRadio = styled.label`
-	.input {
-		/* margin-right: 15px; */
-	}
 	.input-wrapper {
 		justify-content: center;
 		align-items: center;
 	}
-	/* .input-tex {
-		display: block;
-	} */
 `;
 export const ListImage = styled.ul`
 	display: flex;

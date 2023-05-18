@@ -18,7 +18,7 @@ export const CapTablet = styled.div`
 `;
 
 export const BoxTablet = styled.div`
-	font-weight: 500px;
+	font-weight: 500;
 	font-size: 16px;
 	padding: 5px;
 	background-color: #dfc150;

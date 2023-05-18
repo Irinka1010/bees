@@ -1,51 +1,74 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
+import React, { useState } from 'react';
 
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { Header, Navigation, Logo, LogoImg, NavBtn, Collapse } from './NavBar.styled';
-import { NavLink } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import ModalRegister from '../Modal/Modal';
+
+import {
+	Header,
+	HeaderLink,
+	NavList,
+	Navigation,
+	Logo,
+	LogoImg,
+	NavBtn,
+	Collapse,
+	NavLogo,
+} from './NavBar.styled';
+
 import logo from '../../assets/img/logo.png';
-import { Link } from 'react-router-dom';
+import MenuBee from './MenuBee/MenuBee';
 
 const NavBar = () => {
+	const [show, setShow] = useState(false);
+	const [, setUsers] = useState([]);
+	const handleShow = () => setShow(true);
+	const handleClose = () => setShow(false);
+
+	const onSubmitForm = user => {
+		setUsers(prev => {
+			const newUser = {
+				...user,
+			};
+			return [...prev, newUser];
+		});
+		console.log(user);
+		handleClose();
+	};
 	return (
 		<Header>
 			<Navigation collapseOnSelect expand="md" variant="light" style={{ padding: 0 }}>
 				<Container>
 					<NavBtn aria-controls="responsive-navbar-nav" />
-					<Logo>
-						<LogoImg src={logo} alt="logo" width="70" /> bee
-						{/* <NavLogo to={}> */}
-						{/* </NavLogo> */}
-					</Logo>
+
+					<NavLogo to="/">
+						<Logo>
+							<LogoImg src={logo} alt="logo" width="70" /> bee
+						</Logo>
+					</NavLogo>
 
 					<Collapse id="responsive-navbar-nav">
-						<Nav className="me-auto" style={{ marginLeft: '50px' }}>
-							<Nav>
-								<NavDropdown title="Пчелы" id="basic-nav-up" as="ul">
-									<NavDropdown.Item href="#action/3.1">
-										Индийская пчела
-										<NavDropdown.Item href="#action/3.2">Красная</NavDropdown.Item>
-										<NavDropdown.Item href="#action/3.3">Розовоя</NavDropdown.Item>
-										<NavDropdown.Item href="#action/3.4">Чорная</NavDropdown.Item>
-									</NavDropdown.Item>
-									<NavDropdown.Item href="#action/3.1">
-										Арликовая пчела
-										<NavDropdown.Item href="#action/3.2">Красная</NavDropdown.Item>
-										<NavDropdown.Item href="#action/3.3">Розовоя</NavDropdown.Item>
-										<NavDropdown.Item href="#action/3.4">Чорная</NavDropdown.Item>
-									</NavDropdown.Item>
-								</NavDropdown>
-							</Nav>
-							<Link to="/" end>
-								Дом пчелы
-							</Link>
-							<Nav.Link href="#">Соты</Nav.Link>
-							<Nav.Link href="#">Мед</Nav.Link>
-							<Link to="/table">Таблица данных</Link>
-						</Nav>
-						<NavLink href="#">Регистрация</NavLink>
+						<NavList>
+							<li className="nav-item">
+								<MenuBee />
+							</li>
+							<li className="nav-item">
+								<HeaderLink to="/">Дом пчелы</HeaderLink>
+							</li>
+							<li className="nav-item">
+								<HeaderLink>Соты</HeaderLink>
+							</li>
+							<li className="nav-item">
+								<HeaderLink>Мед</HeaderLink>
+							</li>
+							<li className="nav-item">
+								<HeaderLink to="/table">Таблица данных</HeaderLink>
+							</li>
+						</NavList>
+
+						<button type="button" className="nav-button" onClick={handleShow}>
+							Регистрация
+						</button>
+						<ModalRegister show={show} onHide={handleClose} onSubmit={onSubmitForm} />
 					</Collapse>
 				</Container>
 			</Navigation>

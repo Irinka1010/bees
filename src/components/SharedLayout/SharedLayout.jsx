@@ -15,6 +15,7 @@ export default function SharedLayout() {
 					</Container>
 				</Section>
 			</main>
+			<footer></footer>
 		</>
 	);
 }

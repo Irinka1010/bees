@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox } from './Producer.styles';
+import { Checkbox } from './Producer.styled';
 const Producer = () => {
 	// const { producer } = state;
 	// console.log(producer);
