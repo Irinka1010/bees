@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/bees/static/css/main.cb675ba9.css",
-    "main.js": "/bees/static/js/main.f9bf6a87.js",
+    "main.js": "/bees/static/js/main.ceb395ba.js",
     "index.html": "/bees/index.html",
     "main.cb675ba9.css.map": "/bees/static/css/main.cb675ba9.css.map",
-    "main.f9bf6a87.js.map": "/bees/static/js/main.f9bf6a87.js.map"
+    "main.ceb395ba.js.map": "/bees/static/js/main.ceb395ba.js.map"
   },
   "entrypoints": [
     "static/css/main.cb675ba9.css",
-    "static/js/main.f9bf6a87.js"
+    "static/js/main.ceb395ba.js"
   ]
 }
