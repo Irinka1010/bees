@@ -1,8 +1,8 @@
 import React from 'react';
 import { Checkbox } from './Producer.styles';
-const Producer = ({ onChange, state }) => {
-	const { producer } = state;
-	console.log(producer);
+const Producer = () => {
+	// const { producer } = state;
+	// console.log(producer);
 	return (
 		<Checkbox>
 			<li>
@@ -12,7 +12,7 @@ const Producer = ({ onChange, state }) => {
 					id="producer1"
 					name="producer"
 					disabled
-					onChange={onChange}
+					// onChange={onChange}
 					value="SONY"
 				/>
 
@@ -24,7 +24,7 @@ const Producer = ({ onChange, state }) => {
 					className="custom-checkbox"
 					id="producer2"
 					name="producer"
-					onChange={onChange}
+					// onChange={onChange}
 					value="Panasonic"
 				/>
 				<label for="producer2">
@@ -38,7 +38,7 @@ const Producer = ({ onChange, state }) => {
 					className="custom-checkbox"
 					id="producer3"
 					name="producer"
-					onChange={onChange}
+					// onChange={onChange}
 					value="SONY1"
 				/>
 				<label for="producer3">

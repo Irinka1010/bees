@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
-export const Navigation = styled(Navbar)`
+export const Header = styled.header`
 	background-color: #faa61a;
+`;
+export const Section = styled.section`
+	padding: 60px 0 60px;
+`;
+export const Navigation = styled(Navbar)`
 	height: 80px;
 	display: flex;
 	justify-content: space-between;

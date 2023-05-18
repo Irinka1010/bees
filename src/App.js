@@ -1,27 +1,19 @@
 import React from 'react';
-import { useState } from 'react';
-import NavBar from './components/NavBar/NavBar';
-import ResultForm from './components/NavBar/ResultForm/ResultForm';
-import galiiery from './gallery.json';
-import { nanoid } from 'nanoid';
+
+import { Routes, Route } from 'react-router-dom';
+
 import DataTable from './pages/DataTable';
+import SharedLayout from './components/SharedLayout/SharedLayout';
+import FormHome from './pages/FormHome';
 function App() {
-	const [datas, setData] = useState([]);
-	const onSubmitForm = data => {
-		setData(prev => {
-			const newData = {
-				id: nanoid(),
-				...data,
-			};
-			return [...prev, newData];
-		});
-		console.log(datas);
-	};
 	return (
 		<>
-			<NavBar />
-			<ResultForm galiiery={galiiery} onSubmit={onSubmitForm} />
-			<DataTable />
+			<Routes>
+				<Route path="/" element={<SharedLayout />}>
+					<Route index element={<FormHome />} />
+					<Route path="/table" element={<DataTable />} />
+				</Route>
+			</Routes>
 		</>
 	);
 }

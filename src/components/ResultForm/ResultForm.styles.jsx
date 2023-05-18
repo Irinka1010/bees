@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 import Form from 'react-bootstrap/Form';
 
-export const Section = styled.section`
-	padding: 60px 0 60px;
-`;
-export const Title = styled.h1``;
 export const Forms = styled(Form)`
 	.subtitle {
 		color: #665822;
@@ -18,9 +14,7 @@ export const Forms = styled(Form)`
 export const FormList = styled.ul`
 	display: flex;
 `;
-export const WrapperForm = styled.div`
-	display: grid;
-`;
+
 export const LabelRadio = styled.label`
 	.input {
 		/* margin-right: 15px; */
