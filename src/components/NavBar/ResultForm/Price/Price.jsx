@@ -25,6 +25,8 @@ const Price = () => {
 
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
+
+		console.log(value);
 	};
 
 	return (
@@ -45,6 +47,7 @@ const Price = () => {
 			</WrapperLabel>
 
 			<AirbnbSlider
+				name="price"
 				slots={{ thumb: AirbnbThumbComponent }}
 				getAriaLabel={index => (index === 0 ? 'Minimum price' : 'Maximum price')}
 				defaultValue={[0, 100]}

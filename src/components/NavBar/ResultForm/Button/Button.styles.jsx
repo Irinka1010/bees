@@ -14,5 +14,10 @@ export const ButtonForm = styled.button`
 	color: #665822;
 	text-transform: uppercase;
 
-	transition: 300ms background ease-in-out;
+	transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	&:hover,
+	&:focus {
+		background: #665822;
+		color: #fdda55;
+	}
 `;

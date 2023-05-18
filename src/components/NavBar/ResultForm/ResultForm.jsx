@@ -9,6 +9,7 @@ import {
 	Image,
 	WrapperButton,
 } from './ResultForm.styles';
+import useForm from '../../../helpers/hooks/useForm';
 import ReactStars from 'react-rating-stars-component';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
@@ -24,7 +25,22 @@ const speciesBees = [
 	{ title: 'Индийская пчела' },
 	{ title: 'Арликовая пчела' },
 ];
-const ResultForm = ({ galiiery }) => {
+const initialState = {
+	typeBees: [],
+	abdomenBee: [],
+	image: '',
+	producer: [],
+	price: '',
+};
+const ResultForm = ({ galiiery, onSubmit }) => {
+	const { state, handleChange, handleSubmit, setState } = useForm({
+		initialState,
+		onSubmit,
+	});
+	// const { typeBees, abdomenBee, image } = state;
+	const ratingChanged = rating => {
+		setState({ ...state, rating });
+	};
 	const ratingSettings = {
 		size: 35,
 		isHalf: true,
@@ -35,37 +51,45 @@ const ResultForm = ({ galiiery }) => {
 		<Section>
 			<Container>
 				<Title>Фильтр результатов</Title>
-				<Forms>
+				<Forms onSubmit={handleSubmit}>
 					<Row as="ul" md={2} sm={1}>
 						<Col as="li" className={'p-4'}>
 							<h2 className="subtitle">Цена</h2>
-							<Price />
+							<Price onChange={handleChange} state={state} />
 						</Col>
 						<Col as="li" className={'p-4'}>
 							<h2 className="subtitle">Вид пчел</h2>
 							<WrapperForm>
 								<FormControlLabel
-									value="end"
+									value="Большая индийская пчела"
+									name="typeBees"
 									control={<Checkbox color="default" />}
 									label="Большая индийская пчела"
 									labelPlacement="end"
 									disabled
+									onChange={handleChange}
 								/>
 								<FormControlLabel
-									value="end"
+									value="Медоносная пчела"
 									control={<Checkbox color="default" />}
 									label="Медоносная пчела"
 									labelPlacement="end"
 									disabled
+									name="typeBees"
+									onChange={handleChange}
 								/>
 								<FormControlLabel
-									value="end"
+									value="Индийская пчела"
+									onChange={handleChange}
+									name="typeBees"
 									control={<Checkbox color="default" />}
 									label="Индийская пчела"
 									labelPlacement="end"
 								/>
 								<FormControlLabel
-									value="end"
+									value="Арликовая пчела"
+									onChange={handleChange}
+									name="typeBees"
 									control={<Checkbox color="default" />}
 									label="Арликовая пчела"
 									labelPlacement="end"
@@ -74,11 +98,11 @@ const ResultForm = ({ galiiery }) => {
 						</Col>
 						<Col as="li" className={'p-4'}>
 							<h2 className="subtitle">Рейтинг пчел</h2>
-							<ReactStars {...ratingSettings} />
+							<ReactStars {...ratingSettings} onChange={ratingChanged} />
 						</Col>
 						<Col as="li" className={'p-4'}>
 							<h2 className="subtitle">Выбрать производителя</h2>
-							<Producer />
+							<Producer onChange={handleChange} state={state} />
 						</Col>
 						<Col as="li" className={'p-4'}>
 							<h2 className="subtitle">Волосатость брюшка пчелы</h2>
@@ -91,6 +115,8 @@ const ResultForm = ({ galiiery }) => {
 								defaultValue={[speciesBees[0]]}
 								filterSelectedOptions
 								renderInput={params => <TextField {...params} />}
+								onChange={handleChange}
+								name="abdomenBee"
 							/>
 						</Col>
 						<Col as="li" className={'p-4'}>

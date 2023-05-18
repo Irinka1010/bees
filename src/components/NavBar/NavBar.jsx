@@ -35,10 +35,10 @@ const NavBar = () => {
 								</NavDropdown.Item>
 							</NavDropdown>
 						</Nav>
-						<Nav.Link href="#home">Дом пчелы</Nav.Link>
+						<Nav.Link href="home">Дом пчелы</Nav.Link>
 						<Nav.Link href="#">Соты</Nav.Link>
 						<Nav.Link href="#">Мед</Nav.Link>
-						<Nav.Link href="#">Таблица данных</Nav.Link>
+						<Nav.Link href="tablet">Таблица данных</Nav.Link>
 					</Nav>
 					<NavLink href="#">Регистрация</NavLink>
 				</Collapse>
